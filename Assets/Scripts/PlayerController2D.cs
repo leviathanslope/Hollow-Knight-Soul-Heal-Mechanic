@@ -16,7 +16,7 @@ public class PlayerController2D : MonoBehaviour
 
     AudioSource audioSource = null;
 
-    const float _groundedRadius = 0.2f;
+    const float _groundedRadius = 0.05f;
     private bool _grounded;
     const float _ceilingRadius = 0.2f;
     private Rigidbody2D _rigidbody2D;
