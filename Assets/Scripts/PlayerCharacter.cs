@@ -36,6 +36,24 @@ public class PlayerCharacter : MonoBehaviour
         
     }
 
+    public void Heal(int heal)
+    {
+        currentHealth += heal;
+        healthBar.SetHealth(currentHealth);
+
+        if (currentHealth == 100)
+        {
+            currentHealth = 100;
+            healthBar.SetHealth(currentHealth);
+        }
+    }
+
+    public void SoulUse(int soul)
+    {
+        currentSoul -= soul;
+        soulBar.SetSoul(currentSoul);
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
