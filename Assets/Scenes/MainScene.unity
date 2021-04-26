@@ -2503,6 +2503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1245998603}
   - component: {fileID: 1245998602}
+  - component: {fileID: 1245998604}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -2574,6 +2575,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!95 &1245998604
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245998601}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3c9e5d0bca89264aa440d57c215b9ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1247312935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2759,8 +2779,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1542212883}
+  - component: {fileID: 1542212885}
   - component: {fileID: 1542212882}
   - component: {fileID: 1542212884}
+  - component: {fileID: 1542212886}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2851,6 +2873,44 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1542212885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542212881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6c4fc1ca13f3844eb3a83f83c97338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1542212886
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542212881}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0074923784, y: -0.018730931}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.35, y: 0.32}
+    newSize: {x: 0.35, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.26009133, y: 0.20012175}
+  m_EdgeRadius: 0
 --- !u!1 &1819052010
 GameObject:
   m_ObjectHideFlags: 0

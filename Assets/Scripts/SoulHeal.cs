@@ -42,6 +42,7 @@ public class SoulHeal : MonoBehaviour
                 _held = true;
                 playerCharacter.Heal(20);
                 playerCharacter.SoulUse(1);
+                OnHealEvent.Invoke();
             }
         }
 
@@ -49,5 +50,10 @@ public class SoulHeal : MonoBehaviour
         {
             _held = false;
         }
+    }
+
+    public void OnHeal()
+    {
+        animator.SetBool("IsHealing", true);
     }
 }
