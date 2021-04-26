@@ -11,8 +11,11 @@ public class PlayerCharacter : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
+    public int maxSoul = 5;
+    public int currentSoul;
 
     public HealthBar healthBar;
+    public SoulBar soulBar;
 
     [SerializeField] AudioClip _damageSFX = null;
     [SerializeField] AudioClip _deathSFX = null;
@@ -24,6 +27,8 @@ public class PlayerCharacter : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        currentSoul = maxSoul;
+        soulBar.SetMaxSoul(maxSoul);
     }
 
     void Update()
