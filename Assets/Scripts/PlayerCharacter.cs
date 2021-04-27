@@ -19,9 +19,11 @@ public class PlayerCharacter : MonoBehaviour
 
     [SerializeField] AudioClip _damageSFX = null;
     [SerializeField] AudioClip _deathSFX = null;
+    [SerializeField] AudioClip _healingSFX = null;
 
     public UnityEvent OnDieEvent;
     public UnityEvent OnDamageEvent;
+    public UnityEvent OnHealEvent;
 
     private void Start()
     {
@@ -86,10 +88,13 @@ public class PlayerCharacter : MonoBehaviour
     public void OnDie()
     {
         _animator.SetBool("IsDead", true);
+        _animator.SetBool("IsHealing", false);
     }
 
     public void OnDamage()
     {
         _animator.SetBool("IsHurt", true);
+        _animator.SetBool("IsHurt", false);
+        _animator.SetBool("IsHealing", false);
     }
 }

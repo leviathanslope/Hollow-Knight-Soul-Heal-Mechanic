@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class FireBall : MonoBehaviour
 {
+    public Transform target;
+    public Transform startingPos;
+    public GameObject bullet;
+
     // Start is called before the first frame update
     void Start()
     {

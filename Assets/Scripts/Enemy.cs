@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D _colInfo)
+    private void OnTriggerEnter2D(Collider2D collision) 
     {
-        PlayerCharacter playerCharacter = _colInfo.collider.GetComponent<PlayerCharacter>();
-        if (playerCharacter != null)
+        PlayerCharacter playerCharacter = collision.GetComponent<PlayerCharacter>();
+        if (collision.gameObject)
         {
             playerCharacter.TakeDamage(20);
         }

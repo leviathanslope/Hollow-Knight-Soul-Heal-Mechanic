@@ -14,6 +14,7 @@ public class SoulHeal : MonoBehaviour
     [SerializeField] AudioClip _healingSFX = null;
 
     public UnityEvent OnHealEvent;
+    public UnityEvent FinishHealEvent;
 
     private float _startTime = 0f;
     private float _timer = 0f;
@@ -32,6 +33,7 @@ public class SoulHeal : MonoBehaviour
         {
             _startTime = Time.time;
             _timer = _startTime;
+            OnHealEvent.Invoke();
         }
 
         if (Input.GetKey(KeyCode.Q) && _held == false) {
@@ -42,7 +44,7 @@ public class SoulHeal : MonoBehaviour
                 _held = true;
                 playerCharacter.Heal(20);
                 playerCharacter.SoulUse(1);
-                OnHealEvent.Invoke();
+                FinishHealEvent.Invoke();
             }
         }
 
@@ -55,5 +57,10 @@ public class SoulHeal : MonoBehaviour
     public void OnHeal()
     {
         animator.SetBool("IsHealing", true);
+    }
+
+    public void FinishHeal()
+    {
+        animator.SetBool("IsHealing", false);
     }
 }
