@@ -140,19 +140,6 @@ public class PlayerController2D : MonoBehaviour
     {
         _facingRight = !_facingRight;
 
-        Vector3 _theScale = transform.localScale;
-        _theScale.x *= -1;
-        transform.localScale = _theScale;
-    }
-
-    public void Die()
-    {
-        isDead = true;
-        gameObject.SetActive(false);
-
-        if (deathSFX != null)
-        {
-            audioSource.PlayOneShot(deathSFX);
-        }
+        transform.Rotate(0f, 180f, 0f);
     }
 }

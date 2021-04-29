@@ -12,6 +12,7 @@ public class SoulHeal : MonoBehaviour
     public PlayerCharacter playerCharacter;
 
     [SerializeField] AudioClip _healingSFX = null;
+    [SerializeField] AudioClip _noGoodSFX = null;
 
     public UnityEvent OnHealEvent;
     public UnityEvent FinishHealEvent;
@@ -29,21 +30,29 @@ public class SoulHeal : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && (playerCharacter.currentSoul != 0 || playerCharacter.currentHealth != 100))
         {
             _startTime = Time.time;
             _timer = _startTime;
+            playerCharacter.SoulUse(1);
             OnHealEvent.Invoke();
+
+            if (playerCharacter.currentSoul == 0 || playerCharacter.currentHealth == 100)
+            {
+                if (_noGoodSFX != null)
+                {
+                    
+                }
+            }
         }
 
         if (Input.GetKey(KeyCode.Q) && _held == false) {
             _timer += Time.deltaTime;
 
-            if (_timer > (_startTime + holdTime) && playerCharacter.currentSoul != 0)
+            if (_timer > (_startTime + holdTime))
             {
                 _held = true;
                 playerCharacter.Heal(20);
-                playerCharacter.SoulUse(1);
                 FinishHealEvent.Invoke();
             }
         }

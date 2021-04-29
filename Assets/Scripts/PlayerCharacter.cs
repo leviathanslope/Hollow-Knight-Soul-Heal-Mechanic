@@ -78,6 +78,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         Debug.Log("Player has been killed!");
         DisableOnDeathObjects();
+        Destroy(this);
     }
 
     private void DisableOnDeathObjects()

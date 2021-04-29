@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBall : MonoBehaviour
+public class Fireball : MonoBehaviour
 {
-    public Transform target;
-    public Transform startingPos;
-    public GameObject bullet;
+    public float speed = 20f;
+    public Rigidbody2D rb;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        rb.velocity = transform.right * speed;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        PlayerCharacter playerCharacter = collision.GetComponent<PlayerCharacter>();
         
+        if (playerCharacter != null)
+        {
+            playerCharacter.TakeDamage(20);
+        }
+        Destroy(gameObject);
     }
 }
