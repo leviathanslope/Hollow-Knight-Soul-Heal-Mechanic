@@ -11,7 +11,6 @@ public class SoulHeal : MonoBehaviour
     public Animator animator;
     public PlayerCharacter playerCharacter;
 
-    [SerializeField] AudioClip _healingSFX = null;
     [SerializeField] AudioClip _noGoodSFX = null;
 
     public UnityEvent OnHealEvent;
@@ -41,7 +40,7 @@ public class SoulHeal : MonoBehaviour
             {
                 if (_noGoodSFX != null)
                 {
-                    
+                    _audioSource.PlayOneShot(_noGoodSFX, 1f);
                 }
             }
         }
