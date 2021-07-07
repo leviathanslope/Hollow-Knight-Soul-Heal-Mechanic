@@ -25,6 +25,10 @@ public class PlayerCharacter : MonoBehaviour
     public UnityEvent OnDamageEvent;
     public UnityEvent OnHealEvent;
 
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
     private void Start()
     {
         currentHealth = maxHealth;
@@ -47,6 +51,10 @@ public class PlayerCharacter : MonoBehaviour
         {
             currentHealth = 100;
             healthBar.SetHealth(currentHealth);
+        }
+        if (_healingSFX != null)
+        {
+            _audioSource.PlayOneShot(_healingSFX, 1f);
         }
     }
 

@@ -22,6 +22,10 @@ public class SoulHeal : MonoBehaviour
 
     private bool _held = false;
 
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
     private void Start()
     {
         playerCharacter = GetComponent<PlayerCharacter>();
